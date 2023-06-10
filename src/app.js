@@ -3,6 +3,7 @@ const path = require("path");
 const morgan = require("morgan");
 const mysql =  require("mysql");
 const myConnection = require("express-myconnection");
+const mysql2 = require("mysql2");
 
 const app = express();
 
@@ -13,10 +14,10 @@ app.set("views", path.join(__dirname, "views"));
 
 // midlewares
 app.use(morgan("dev"));
-app.use(myConnection(mysql, {
+app.use(myConnection(mysql2, {
     host: "localhost",
     user: "root",
-    password: "root",
+    password: "password",
     port: 3306,
     database: "crudnodejs"
 }, "single"));
