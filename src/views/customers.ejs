@@ -3,7 +3,29 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-md-7">
-
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>NOMBRE</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                        <% for (var i = 0; i < data.length; i++); { %>
+                            <tr>
+                                <td><%= (i + 1) %></td>
+                                <td><%= data[i] %></td>
+                                <td><%= data[i] %></td>
+                                <td><%= data[i] %></td>
+                            </tr> 
+                       <% } %>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
         <div class="col-md-5">
             <div class="card">
@@ -19,7 +41,7 @@
                             <input type="text" name="telefono" placeholder="Ingrese su Telefono" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">
-                            Guarda un Cliente
+                            Guardar
                         </button>
                     </form>   
                 </div>
