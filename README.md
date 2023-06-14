@@ -8,6 +8,8 @@ mysql -u root -p
 
 npm run dev
 
+// el servidor está en localhost:3000
+
 # ESTILOS
 
 https://bootswatch.com/5/slate/bootstrap.min.css
