@@ -1,8 +1,8 @@
 -- creando base de datos
-CREATE DATABASE crudnodejs;
+CREATE DATABASE crudnodejsmysql;
 
 -- usando database
-use crudnodejs;
+use crudnodejsmysql;
 
 -- creando una tabla
 CREATE TABLE customer (
