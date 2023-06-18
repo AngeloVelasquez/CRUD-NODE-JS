@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended: false}));
 app.use("/", customerRoutes);
 
 // archivos estaticos
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"))); //esta carpeta me permitira añadir más cosas al codigo
 
 // iniciando server
 app.listen(app.get("port"), () => {
