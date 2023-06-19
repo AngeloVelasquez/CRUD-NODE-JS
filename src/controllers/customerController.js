@@ -51,7 +51,41 @@ controller.delete = (req, res) => {
             res.redirect("/");
         });
     });
+};
+
+controller.show = (req, res) => {
+    res.render ("customers")
+    data: customers
+    req.getConnection((err, conn) => {
+        conn.query("SELECT * FROM customer", (customers) => {
+            if (data) {
+                for (var i = 0; i < data.length; i++) {
+                    const id = i + 1
+                    const nombre = data[i].nombre
+                    const dirección = data[i].dirección
+                    const telefono = data[i].telefono
+
+                    const  div = document.createElement("div");
+                    div1.appendChild(id);
+                    div2.appendChild(nombre);
+                    div3.appendChild(dirección);
+                    div4.appendChild(telefono);
+                }
+
+                function traerdatos() {
+                    fetch("/show")
+                    .then((res) => res.json())
+                    .then((data) => {
+                        controller.show;
+                    })
+                }
+            }
+            
+        });
+    });
 }
+
+
     
 
 
