@@ -14,20 +14,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% if (data) { %>
-                        <% for (var i = 0; i < data.length; i++) { %>
-                            <tr>
-                                <td><%= (i + 1) %></td>
-                                <td><%= data[i].nombre %></td>
-                                <td><%= data[i].dirección %></td>
-                                <td><%= data[i].telefono %></td>
-                                <td>
-                                    <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Borrar</a>
-                                    <a href="/update/<%= data[i].id %>" class="btn btn-info">Actualizar</a>
-                                </td>
-                            </tr> 
-                       <% } %>
-                    <% } %>
+                    <div class="datacontainer">
+                        <tr>
+                            <td><%= (i + 1) %></td>
+                            <td><%= data[i].nombre %></td>
+                            <td><%= data[i].dirección %></td>
+                            <td><%= data[i].telefono %></td>
+                            <td>
+                                <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Borrar</a>
+                                <a href="/update/<%= data[i].id %>" class="btn btn-info">Actualizar</a>
+                            </td>
+                        </tr> 
+                    </div>
                 </tbody>
             </table>
         </div>
