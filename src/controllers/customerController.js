@@ -14,16 +14,15 @@ controller.list = (req, res) => {
               dirección: customer.dirección,
               telefono: customer.telefono,
               id: customer.id
-            };
-          });
-
+            }
+          })
           res.render("customers", {
             data: renderedData
-          });
+          })
         }
-      });
-    });
-  };
+      })
+    })
+  }
   
 
 controller.save = (req, res) => {
@@ -60,7 +59,7 @@ controller.update = (req, res) => {
 controller.delete = (req, res) => {
     const { id } = req.params;
     req.getConnection((err, conn) => {
-        conn.query("DELETE FROM customer WHERE id = ?", [id], (err, rows) => {
+        conn.query("DELETE FROM customer WHERE id = ?", [req.params], (err, rows) => {
             if (err) {
                 res.status(500).json({ error: "Error al eliminar"})
             } else {
