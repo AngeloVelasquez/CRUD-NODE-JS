@@ -14,21 +14,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <div class="datacontainer">
+                    <% for (const item of data) { %>
                         <tr>
-                            <td>
-                                <div class="div1"></div>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a href="/delete/" class="btn btn-danger">Borrar</a>
-                                <a href="/update/" class="btn btn-info">Actualizar</a>
-                                <a href="/show" class="btn">aa</a>
-                            </td>
+                          <td><%= item.i %></td>
+                          <td><%= item.nombre %></td>
+                          <td><%= item.dirección %></td>
+                          <td><%= item.telefono %></td>
+                          <td>
+                            <a href="/delete/<%= item.id %>" class="btn btn-danger">Borrar</a>
+                            <a href="/update/<%= item.id %>" class="btn btn-info">Actualizar</a>
+                          </td>
                         </tr> 
-                    </div>
+                    <% } %>                      
                 </tbody>
             </table>
         </div>
