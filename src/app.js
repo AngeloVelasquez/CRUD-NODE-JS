@@ -16,7 +16,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // midlewares
-app.use(morgan("dev"));
+app.use(morgan("dev")); //me permite reiniciar el servidor cada que se hace un cambio en el codigo
 app.use(myConnection(mysql2, {
     host: "localhost",
     user: "root",
