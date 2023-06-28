@@ -27,7 +27,6 @@ controller.list = (req, res) => {
 
 controller.save = (req, res) => {
     const data = req.body;
-
     req.getConnection((err, conn) => {
         conn.query("INSERT INTO customer set ?", [data], (err, customer) => {
             res.redirect("/");
@@ -59,12 +58,8 @@ controller.update = (req, res) => {
 controller.delete = (req, res) => {
     const { id } = req.params;
     req.getConnection((err, conn) => {
-        conn.query("DELETE FROM customer WHERE id = ?", [req.params], (err, rows) => {
-            if (err) {
-                res.status(500).json({ error: "Error al eliminar"})
-            } else {
-                res.redirect("/")
-            }
+        conn.query("DELETE FROM customer WHERE id = ?", [id], (err, rows) => {
+            res.redirect("/")
         })
     })
 }

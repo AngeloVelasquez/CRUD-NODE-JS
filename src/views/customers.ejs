@@ -21,8 +21,8 @@
                           <td><%= item.dirección %></td>
                           <td><%= item.telefono %></td>
                           <td>
-                            <a href="/delete/<%= item.id %>" class="btn btn-danger">Borrar</a>
-                            <a href="/update/<%= item.id %>" class="btn btn-info">Actualizar</a>
+                            <a href="/deleteClientById/<%= item.id %>" class="btn btn-danger">Borrar</a>
+                            <a href="/clientById/<%= item.id %>" class="btn btn-info">Actualizar</a>
                           </td>
                         </tr> 
                     <% } %>                      
@@ -32,7 +32,7 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
-                    <form action="/add" method="post">
+                    <form action="/addClient" method="post">
                         <div class="form-group mt-3">
                             <input type="text" name="nombre" placeholder="Ingrese su Nombre" class="form-control">
                         </div>
