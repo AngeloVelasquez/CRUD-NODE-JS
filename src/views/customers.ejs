@@ -14,27 +14,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% if (data) { %>
-                        <% for (var i = 0; i < data.length; i++) { %>
-                            <tr>
-                                <td><%= (i + 1) %></td>
-                                <td><%= data[i].nombre %></td>
-                                <td><%= data[i].dirección %></td>
-                                <td><%= data[i].telefono %></td>
-                                <td>
-                                    <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Borrar</a>
-                                    <a href="/update/<%= data[i].id %>" class="btn btn-info">Actualizar</a>
-                                </td>
-                            </tr> 
-                       <% } %>
-                    <% } %>
+                    <% for (const item of data) { %>
+                        <tr>
+                          <td><%= item.i %></td>
+                          <td><%= item.nombre %></td>
+                          <td><%= item.dirección %></td>
+                          <td><%= item.telefono %></td>
+                          <td>
+                            <a href="/deleteClientById/<%= item.id %>" class="btn btn-danger">Borrar</a>
+                            <a href="/clientById/<%= item.id %>" class="btn btn-info">Actualizar</a>
+                          </td>
+                        </tr> 
+                    <% } %>                      
                 </tbody>
             </table>
         </div>
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
-                    <form action="/add" method="post">
+                    <form action="/addClient" method="post">
                         <div class="form-group mt-3">
                             <input type="text" name="nombre" placeholder="Ingrese su Nombre" class="form-control">
                         </div>
